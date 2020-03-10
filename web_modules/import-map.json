@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "tone": "./tone.js"
+  }
+}

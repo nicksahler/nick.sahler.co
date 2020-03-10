@@ -1,0 +1,23 @@
+{
+  "name": "nick.sahler.co",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicksahler/nick.sahler.co.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicksahler/nick.sahler.co/issues"
+  },
+  "homepage": "https://github.com/nicksahler/nick.sahler.co#readme",
+  "dependencies": {
+    "tone": "^13.8.25"
+  }
+}

@@ -1,189 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <title>Nick Sahler</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nick Sahler</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500&display=swap" rel="stylesheet">
-    <style type="text/css">
-      body {
-        font-family: 'Work Sans', sans-serif;
-        font-weight: 500;
-        box-sizing: border-box;
-        height: 100vh;
-        margin: 0;
-        padding: 2em;
-
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .wrapper {
-        display: flex;
-        flex-flow: column;
-
-        align-items: center;
-        justify-content: center;
-      }
-
-      .frog-wrapper {
-        display: flex;
-        flex-flow: row;
-        justify-content: center;
-      }
-
-      .contact-form {
-        opacity: 0;
-        width: 0px;
-        height: 0px;
-        overflow: hidden;
-
-        transition: opacity 500ms cubic-bezier(.65, .05, .36, 1),
-          width 500ms cubic-bezier(.65, .05, .36, 1) 500ms,
-          height 500ms cubic-bezier(.65, .05, .36, 1);
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        box-sizing: border-box;
-      }
-
-      .contact-form input {
-        border: none;
-        border-bottom: 1px solid #333;
-        margin-bottom: 10px;
-        padding-bottom: 5px;
-        width: 300px;
-      }
-
-      .contact-form textarea {
-        border: 1px solid #333;
-        padding: 5px;
-        height: 100px;
-      }
-
-      .contact-form label {
-        font-weight: 400;
-      }
-
-      .contact-form .send {
-        cursor: pointer;
-      }
-
-      .show {
-        width: 100%;
-        height: 100%;
-        opacity: 1;
-      }
-
-      .jiggle span {
-        display: inline-block;
-      }
-
-      .brb span {
-        font-size: 30px;
-        letter-spacing: 15px;
-      }
-
-      svg {
-        max-width: 150px;
-        margin-bottom: 20px;
-        transition: transform 600ms cubic-bezier(.65, .05, .36, 1);
-        cursor: pointer;
-      }
-
-      svg:hover, svg.static {
-        transform: rotate3d(0,0,1, 360deg);
-      }
-
-      .contact-me {
-        position: absolute;
-        bottom: 5px;
-        right: 10px;
-        cursor: pointer;
-      }
-
-      @media screen and (max-width: 420px) {
-        .brb span {
-          font-size: 15px;
-          letter-spacing: 7px;
-        }
-      }
-    </style>
-
-    <script type="text/javascript">
-      window.addEventListener( 'DOMContentLoaded', () => {
-        const $texts = document.querySelectorAll( '.jiggle' )
-
-        const SLOWDOWN = 1 / 200
-        const AMPLITUDE = 5
-        const Y = ( i ) => Math.sin( i + performance.now() * SLOWDOWN ) * AMPLITUDE 
-
-        const jiggle = () => {
-          requestAnimationFrame( jiggle )
-
-          Array.from( $texts ).forEach(( $text ) => { 
-            Array.from( $text.children ).forEach(( $a, i ) => (
-              $a.style.transform = `translate3d(0, ${ Y( i ) }px, 0 )`
-            ))
-          })
-        }
-
-        Array.from( $texts ).forEach(( $text ) => { 
-          const chars = [...( $text.innerText )]
-          $text.innerHTML = chars.map( c => `<span>${c}</span>` ).join( '' )
-        })
-
-        jiggle()
-
-        /* ---- contact ----- */
-
-        const $frog = document.querySelector( '.frog' )
-        const $contact_me = document.querySelector( '.contact-me' )
-        const $send = document.querySelector( '.send' )
-
-        const showContact = () => {
-          document.querySelector( '.contact-form' ).classList.add( 'show' )
-          document.querySelector( '.frog' ).classList.add( 'static' )
-        }
-
-        $contact_me.addEventListener( 'click', showContact )
-        $frog.addEventListener( 'click', showContact )
-
-        const $from = document.querySelector( '.from' )
-        const $message = document.querySelector( '.message' )
-
-        $send.addEventListener( 'click', () => {
-          let params = `?value1=${ $from.value }&value2=${ $message.value }`
-          fetch( 'https://maker.ifttt.com/trigger/personal_site_message/with/key/c4XCROQjKuMkvgG7GglDFs' + params, {
-            method: 'POST', mode: 'no-cors',
-            cache: 'no-cache',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded', }
-          })
-        })
-      })
-    </script>
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <script type="importmap" src="/web_modules/import-map.json"></script>
   </head>
   <body>
-    <div class="wrapper">
-      <svg class="frog" width="269" height="269" viewBox="0 0 269 269" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M222.387 113.122C225.105 99.9237 236.789 90 250.791 90C254.774 90 258.569 90.8027 262.023 92.2553C258.191 80.6612 252.824 69.7655 246.163 59.8087C252.133 53.4567 255.791 44.9055 255.791 35.5C255.791 15.8939 239.897 0 220.291 0C209.101 0 199.12 5.17774 192.613 13.2682C174.97 4.76519 155.187 0 134.291 0C113.679 0 94.1494 4.6367 76.6891 12.924C70.1779 5.03118 60.3221 0 49.2912 0C29.6851 0 13.7912 15.8939 13.7912 35.5C13.7912 44.5987 17.2142 52.8979 22.8427 59.1801C15.7832 69.6053 10.1481 81.0738 6.21683 93.306C10.2392 91.1946 14.8183 90 19.6764 90C33.5199 90 45.0978 99.6999 47.9844 112.674C75.0027 102.855 104.163 97.5 134.575 97.5C165.445 97.5 195.027 103.018 222.387 113.122ZM119.176 81C122.214 81 124.676 78.5376 124.676 75.5C124.676 72.4624 122.214 70 119.176 70C116.139 70 113.676 72.4624 113.676 75.5C113.676 78.5376 116.139 81 119.176 81ZM154.676 75.5C154.676 78.5376 152.214 81 149.176 81C146.139 81 143.676 78.5376 143.676 75.5C143.676 72.4624 146.139 70 149.176 70C152.214 70 154.676 72.4624 154.676 75.5ZM220.676 61C234.484 61 245.676 49.8071 245.676 36C245.676 22.1929 234.484 11 220.676 11C206.869 11 195.676 22.1929 195.676 36C195.676 49.8071 206.869 61 220.676 61ZM74.6764 36C74.6764 49.8071 63.4835 61 49.6764 61C35.8693 61 24.6764 49.8071 24.6764 36C24.6764 22.1929 35.8693 11 49.6764 11C63.4835 11 74.6764 22.1929 74.6764 36Z" fill="black"/>
-        <path d="M221.801 118.24C221.794 118.492 221.791 118.746 221.791 119C221.791 135.016 234.775 148 250.791 148C257.501 148 263.678 145.722 268.591 141.896C264.752 212.739 206.092 269 134.291 269C62.5453 269 3.91987 212.824 0 142.058C0.384535 141.81 0.769799 141.563 1.15579 141.317C6.17936 145.49 12.6348 148 19.6764 148C35.6926 148 48.6764 135.016 48.6764 119C48.6764 118.583 48.6676 118.168 48.6502 117.756C75.4274 107.888 104.372 102.5 134.575 102.5C165.268 102.5 194.661 108.065 221.801 118.24Z" fill="black"/>
-        <path d="M220.791 56C231.837 56 240.791 47.0457 240.791 36C240.791 24.9543 231.837 16 220.791 16C209.746 16 200.791 24.9543 200.791 36C200.791 47.0457 209.746 56 220.791 56Z" fill="black"/>
-        <path d="M49.7912 56C60.8369 56 69.7912 47.0457 69.7912 36C69.7912 24.9543 60.8369 16 49.7912 16C38.7455 16 29.7912 24.9543 29.7912 36C29.7912 47.0457 38.7455 56 49.7912 56Z" fill="black"/>
-      </svg>
-      <div class="jiggle brb" data-amplitude=5>BE RIGHT BACK</div>
-      <div class="contact-form">
-        <label>from:</label>
-        <input class="from" type="text" name="" placeholder="your@email.address.com"><br/>
-        <label>message:</label>
-        <textarea class="message" placeholder="Tell me something"></textarea>
-        <div class="send" data-amplitude=2>send</div>
-      </div>
-    </div>
+    <main>
+      <link rel="stylesheet" type="text/css" href="./styles/main.css">
+      <p class="description">
+        <strong>Nick Sahler</strong> is a <a class="jiggle" href="#">machine learning engineer</a> at <a class="jiggle" href="https://squarespace.com">Squarespace</a>, and is helping organize <a class="jiggle" href="https://nativesintech.org/">Natives in Tech</a> as a contributor and board member. In his free time he advocates for <a class="jiggle" href="#">Indigenous language preservation</a> and works on assorted <a class="jiggle" href="#">projects in Unity</a>.
+      </p>
 
-    <div class="contact-me">contact me</div>
+      <section>
+        <h3>Ongoing Projects</h3>
+
+        <div class="examples">
+          <a href="#" class="example">
+              <div class="title jiggle">This Site</div>
+              <span class="info">(is a work in progress)</span>
+              <time>March 2020</time>
+          </a>
+           <a href="#" class="example">
+              <div class="title jiggle">Test Project</div>
+              <span class="info">Cool Long Description.</span>
+              <time>Apr 2020</time>
+          </a>
+          <a href="#" class="example">
+              <div class="title jiggle">Alpha</div>
+              <span class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+              <time>May 2020</time>
+          </a>
+          <a href="#" class="example">
+              <div class="title jiggle">Beta Sigma Altoid</div>
+              <span class="info">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+              <time>Jun 2020</time>
+          </a>
+          <a href="#" class="example">
+              <div class="title jiggle">Gamma Delta Peanuts</div>
+              <span class="info">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+              <time>July 2020</time>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="contact">
+        <!-- <div class="line"><span>email</span> <a href="mailto:a@b.com">temporary@sahler.co</a></div> -->
+        <div class="line"><span>twitter</span> <a href="https://twitter.com/nicksahler">@nicksahler</a></div>
+        <div class="line"><span>pgp</span> <a href="https://keybase.io/nicksahler">66D8 3E03 39D3 A010</a></div>
+      </div>
+
+      <div class="end">
+        <div class="overflow"><span>This frog marks the end of the page.</span></div>
+        <svg title="This frog marks the end of the page" class="frog" width="269" height="269" viewBox="0 0 269 269" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M222.387 113.122C225.105 99.9237 236.789 90 250.791 90C254.774 90 258.569 90.8027 262.023 92.2553C258.191 80.6612 252.824 69.7655 246.163 59.8087C252.133 53.4567 255.791 44.9055 255.791 35.5C255.791 15.8939 239.897 0 220.291 0C209.101 0 199.12 5.17774 192.613 13.2682C174.97 4.76519 155.187 0 134.291 0C113.679 0 94.1494 4.6367 76.6891 12.924C70.1779 5.03118 60.3221 0 49.2912 0C29.6851 0 13.7912 15.8939 13.7912 35.5C13.7912 44.5987 17.2142 52.8979 22.8427 59.1801C15.7832 69.6053 10.1481 81.0738 6.21683 93.306C10.2392 91.1946 14.8183 90 19.6764 90C33.5199 90 45.0978 99.6999 47.9844 112.674C75.0027 102.855 104.163 97.5 134.575 97.5C165.445 97.5 195.027 103.018 222.387 113.122ZM119.176 81C122.214 81 124.676 78.5376 124.676 75.5C124.676 72.4624 122.214 70 119.176 70C116.139 70 113.676 72.4624 113.676 75.5C113.676 78.5376 116.139 81 119.176 81ZM154.676 75.5C154.676 78.5376 152.214 81 149.176 81C146.139 81 143.676 78.5376 143.676 75.5C143.676 72.4624 146.139 70 149.176 70C152.214 70 154.676 72.4624 154.676 75.5ZM220.676 61C234.484 61 245.676 49.8071 245.676 36C245.676 22.1929 234.484 11 220.676 11C206.869 11 195.676 22.1929 195.676 36C195.676 49.8071 206.869 61 220.676 61ZM74.6764 36C74.6764 49.8071 63.4835 61 49.6764 61C35.8693 61 24.6764 49.8071 24.6764 36C24.6764 22.1929 35.8693 11 49.6764 11C63.4835 11 74.6764 22.1929 74.6764 36Z" fill="#151515"/>
+          <path d="M221.801 118.24C221.794 118.492 221.791 118.746 221.791 119C221.791 135.016 234.775 148 250.791 148C257.501 148 263.678 145.722 268.591 141.896C264.752 212.739 206.092 269 134.291 269C62.5453 269 3.91987 212.824 0 142.058C0.384535 141.81 0.769799 141.563 1.15579 141.317C6.17936 145.49 12.6348 148 19.6764 148C35.6926 148 48.6764 135.016 48.6764 119C48.6764 118.583 48.6676 118.168 48.6502 117.756C75.4274 107.888 104.372 102.5 134.575 102.5C165.268 102.5 194.661 108.065 221.801 118.24Z" fill="#151515"/>
+          <path d="M220.791 56C231.837 56 240.791 47.0457 240.791 36C240.791 24.9543 231.837 16 220.791 16C209.746 16 200.791 24.9543 200.791 36C200.791 47.0457 209.746 56 220.791 56Z" fill="#151515"/>
+          <path d="M49.7912 56C60.8369 56 69.7912 47.0457 69.7912 36C69.7912 24.9543 60.8369 16 49.7912 16C38.7455 16 29.7912 24.9543 29.7912 36C29.7912 47.0457 38.7455 56 49.7912 56Z" fill="#151515"/>
+        </svg>
+      </div>
+    </footer>
+    <script type="module" src="/src/app.js"></script>
   </body>
 </html>
