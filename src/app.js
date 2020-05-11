@@ -3,32 +3,32 @@ import Tone from '/web_modules/tone.js'
 const lerp = (a, b, t) => a * ( 1 - t ) + b * t
 
 window.addEventListener('DOMContentLoaded', () => {
-  //create a synth and connect it to the master output (your speakers)
+  /*
   var distortion = new Tone.Distortion(0.6)
   var tremolo = new Tone.Tremolo().start()
   var bits = new  Tone.BitCrusher(4)
 
   var synth = new Tone.Synth({
-    envelope : {
-      attack: 0.05,
-      decay: 0.1,
-      sustain: 0.3,
-      release: 0.02
-    } 
-  }).toMaster().chain(bits, Tone.Master)
+      envelope : {
+        attack: 0.05,
+        decay: 0.1,
+        sustain: 0.3,
+        release: 0.02
+      } 
+    }).toMaster().chain(bits, Tone.Master)
 
-  synth.volume.value = -10
+    synth.volume.value = -10
 
-  let $frog = document.querySelector('.frog')
+    let $frog = document.querySelector('.frog')
 
-  $frog.addEventListener('mousedown', () => {
-    // synth.triggerAttack(2000);
-  })
+    $frog.addEventListener('mousedown', () => {
+      // synth.triggerAttack(2000);
+    })
 
-  $frog.addEventListener('mouseup', () => {
-    // synth.triggerRelease()
-  })
-
+    $frog.addEventListener('mouseup', () => {
+      // synth.triggerRelease()
+    })
+  */
   const $texts = document.querySelectorAll( '.jiggle' )
 
   let A_FROM = 0, A_TO = 0
