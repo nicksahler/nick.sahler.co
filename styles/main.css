@@ -45,6 +45,7 @@ main section {
 .examples {
   display: flex;
   flex-flow: column;
+  margin-bottom: 15px;
 }
 
 .examples .example {
@@ -54,16 +55,28 @@ main section {
   margin-bottom: 0.3em;
 }
 
-.examples .title  {
+.example .thumbnail {
+  position: absolute;
+  z-index: -1;
+  right: 25vw;
+  opacity: 0;
+  transition: opacity 300ms cubic-bezier(.65,.05,.36,1);
+}
+
+.example:hover .thumbnail {
+  opacity: 1;
+}
+
+.example .title  {
   flex-basis: 20%;
 }
 
-.examples .info {
+.example .info {
   flex: 1;
   color: #888;
 }
 
-.examples time {
+.example time {
   flex: 1;
   text-align: right;
 }
@@ -105,13 +118,10 @@ footer .end {
   align-items: center;
 }
 
-footer svg {
+footer .frog {
   width: 50px;
   height: 50px;
   cursor: pointer;
-}
-
-footer .frog {
   transition: transform 300ms cubic-bezier(.65,.05,.36,1);
 }
 
@@ -146,4 +156,41 @@ footer .overflow span {
 .jiggle span {
   display: inline-block;
   /*letter-spacing: 2px;*/
+}
+
+@media only screen and (max-width : 768px) {
+  h3 {
+    margin-bottom: 0px;
+  }
+
+  .examples .example {
+    flex-flow: column;
+  }
+
+  .example .title {
+    order: 0;
+    flex: 1 0 50%;
+    box-sizing: border-box;
+  }
+
+  .example time {
+    order: 1;
+    text-align: left;
+    flex: 0 1 50%;
+    box-sizing: border-box;
+  }
+
+  .example .info {
+    order: 2;
+    margin-bottom: 15px;
+  }
+
+  .example .thumbnail {
+    order: 3;
+    position: initial;
+    opacity: 1;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    max-width: 100%;
+  }
 }

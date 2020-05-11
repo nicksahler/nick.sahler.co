@@ -22,11 +22,11 @@ window.addEventListener('DOMContentLoaded', () => {
   let $frog = document.querySelector('.frog')
 
   $frog.addEventListener('mousedown', () => {
-    synth.triggerAttack(2000);
+    // synth.triggerAttack(2000);
   })
 
   $frog.addEventListener('mouseup', () => {
-    synth.triggerRelease()
+    // synth.triggerRelease()
   })
 
   const $texts = document.querySelectorAll( '.jiggle' )
