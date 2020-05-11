@@ -72,12 +72,13 @@ main section {
 }
 
 .example .info {
-  flex: 1;
+  flex: 11;
   color: #888;
+  padding-right: 100px;
 }
 
 .example time {
-  flex: 1;
+  flex: 0 0 auto;
   text-align: right;
 }
 
@@ -123,6 +124,10 @@ footer .frog {
   height: 50px;
   cursor: pointer;
   transition: transform 300ms cubic-bezier(.65,.05,.36,1);
+}
+
+.frog svg g {
+  fill: #151515;
 }
 
 footer .frog:hover {
@@ -182,6 +187,7 @@ footer .overflow span {
 
   .example .info {
     order: 2;
+    padding: 0;
     margin-bottom: 15px;
   }
 
