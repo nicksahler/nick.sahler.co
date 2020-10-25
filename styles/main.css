@@ -1,23 +1,25 @@
-body {
+html {
   font-family: 'Cabin', sans-serif;
   font-weight: 400;
   font-size: 14px;
+  line-height: 1.5rem;
+  color: #151515;
+}
 
+body {
   display: flex;
   flex-flow: column nowrap;
 
   max-width: 1024px;
   margin: 0 auto;
-  padding: 1em;
+  padding: 1rem;
 
-  color: #151515;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.25px;
   flex: 1;
 }
 
 h1, h2, h3 {
-  font-family: 'Cabin', serif;
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 a {
@@ -26,7 +28,7 @@ a {
 }
 
 header {
-  padding-bottom: 1em;
+  padding-bottom: 1rem;
   flex: 0 1;
 }
 
@@ -42,20 +44,22 @@ main {
 
 section {
   border-top: 1px dotted #DDD;
-  padding-bottom: 1em;
-}
-
-section {
+  padding: 1em 0;
   display: flex;
   flex-flow: column;
-  padding-top: 1em;
+}
+
+section h3 {
+  color: #888;
+  font-weight: normal;
+  font-size: 1.14285714rem;
 }
 
 section .example {
   display: flex;
   flex-flow: row;
   justify-content: flex-start;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.3rem;
 }
 
 section .example .thumbnail {
@@ -72,21 +76,22 @@ section .example:hover .thumbnail {
 
 section .example .title  {
   flex-basis: 20%;
+  font-weight: bold;
 }
 
 section .example .info {
   flex: 11;
-  color: #888;
   padding-right: 100px;
 }
 
 section .example time {
   flex: 0 0 auto;
+  color: #AAA;
   text-align: right;
 }
 
 footer {
-  padding-top: 1em;
+  padding-top: 1rem;
   border-top: 1px dotted #DDD;
   display: flex;
   flex-flow: row wrap;
@@ -106,7 +111,7 @@ footer .contact .line {
   justify-content: space-between;
   /*border-top: 1px dotted #DDD;*/
   line-height: 1;
-  padding: 0.3em;
+  padding-bottom: 0.5rem;
 }
 
 footer .contact div:nth-child(1) {
@@ -169,7 +174,7 @@ footer .overflow span {
 
 @media only screen and (max-width : 768px) {
   h3 {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
   }
 
   section .example {
@@ -192,7 +197,9 @@ footer .overflow span {
   section .example .info {
     order: 2;
     padding: 0;
-    margin-bottom: 15px;
+    margin-bottom: 1em;
+    margin-top: .5em;
+
     flex: 1 0 100%;
   }
 
