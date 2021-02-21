@@ -1,0 +1,125 @@
+*, *::before, *::after { box-sizing: border-box; }
+article > * + * { margin-top: 1em; }
+input, button, textarea, select { font: inherit; }
+
+body, h1, h2, h3, h4, p,
+ul[class], ol[class], li,
+figure, figcaption, blockquote,
+dl, dd { margin: 0; }
+
+ul[class], ol[class] {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html, body {
+	position: relative;
+  font-size: 14px;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+
+	margin: 0 auto;
+  max-width: 1024px;
+
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: #151515;
+
+	box-sizing: border-box;
+	font-family: 'Cabin', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  letter-spacing: 0.25px;
+  padding: 1rem;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.subgrid {
+  display: grid;
+  grid-template-columns: inherit;
+  column-gap: inherit;
+}
+
+a {
+  color: #151515;
+  text-decoration: none;
+}
+
+.jiggle span {
+  display: inline-block;
+}
+
+@media screen and (max-width : 768px) {
+  /*
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  section .example {
+    flex-flow: row wrap;
+  }
+
+  section .example .title {
+    order: 0;
+    flex: 1 0 50%;
+    box-sizing: border-box;
+  }
+
+  section .example time {
+    order: 1;
+    text-align: right;
+    flex: 0 1 50%;
+    box-sizing: border-box;
+  }
+
+  section .example .info {
+    order: 2;
+    padding: 0;
+    margin-bottom: 1em;
+    margin-top: .5em;
+
+    flex: 1 0 100%;
+  }
+
+  section .example .thumbnail {
+    order: 3;
+    position: initial;
+    opacity: 1;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    max-width: 100%;
+  }
+
+  footer .contact {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  footer .end {
+    width: 100%;
+    justify-content: flex-end;
+  }*/
+}

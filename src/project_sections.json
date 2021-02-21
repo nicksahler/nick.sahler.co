@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Indigenous Language Preservation",
+    "projects": [{
+      "url": "https://www.unicode.org/L2/L2018/18047-mayan-presentation.pdf",
+      "title": "Ncodex",
+      "info": "Built database infrastructure to aid in the encoding of the Mayan written language to promote modern usage.",
+      "date": "2019 Jan – 2021",
+      "image": {
+        "src": "./assets/ncodex.jpg"
+      }
+    }]
+  },
+  {
+    "title": "Web Development",
+    "projects": [{
+        "url": "https://bathsmusic.net/",
+        "title": "Baths (bathsmusic.net)",
+        "info": "Homepage for the artist Baths",
+        "date": "2019 Nov",
+        "image": { "src": "./assets/baths-756.jpg" }
+      },{
+        "url": "https://squarespace.com",
+        "title": "Squarespace.com",
+        "info": "Worked on the Squarespace Frontsite.",
+        "date": "2017 – 2018",
+        "image": { "src": "./assets/squarespace.jpg" }
+      },{
+        "url": "https://www.squarespace.com/about/timeline",
+        "title": "Squarespace Timeline",
+        "info": "A timeline of the company's progress.",
+        "date": "2017 Nov",
+        "image": { "src": "./assets/squarespace-timeline.jpg" }
+      }
+    ]
+  },
+  {
+    "title": "Information Security",
+    "projects": [{
+      "url": "https://www.techradar.com/news/united-nations-suffers-major-data-breach",
+      "title": "United Nations suffers major data breach",
+      "info": "&ldquo;100k United Nations Environmental Programme employees had their data exposed online&rdquo; &mdash; Techradar",
+      "date": "2021 Jan 11"
+    },
+    {
+      "url": "https://securityledger.com/2020/12/neopets-is-still-a-thing-and-its-exposing-sensitive-data/",
+      "title": "Neopets Data Breach",
+      "info": "&ldquo;Update: Neopets Is Still A Thing And Its Exposing Sensitive Data&rdquo; &mdash; Security Ledger",
+      "date": "2020 Dec 28"
+    },
+    {
+      "url": "https://securityledger.com/2020/11/exploitable-flaw-in-npm-private-ip-app-lurks-everywhere-anywhere/",
+      "title": "CVE-2020-28360: npm private-ip SSRF Bypass (IP Phone Home)",
+      "info": "&ldquo;Exploitable Flaw in NPM Private IP App Lurks Everywhere, Anywhere&mdash; Security Ledger",
+      "date": "2020 Nov 24"
+    }]
+  },
+  {
+    "title": "Reading List",
+    "href": "/reading"
+  }
+]
