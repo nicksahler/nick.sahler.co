@@ -14,6 +14,7 @@
   <div class="info" class:wide>
     <span class="title">{title}</span>
     {#if info}<p>{@html info}</p>{/if}
+    <slot/>
   </div>
   {#if !wide }
     <img class="thumbnail" src={image.src} />
@@ -21,8 +22,8 @@
 </a>
 
 <style lang="scss">
-@import './styles/variables.scss';
-@import './styles/grid.scss';
+@import '../styles/variables.scss';
+@import '../styles/grid.scss';
 
 .example {
   grid-column: 1 / 13;
@@ -89,6 +90,10 @@
     grid-column: 1 / -1;
     grid-row-start: 1;
     border-bottom: $border;
+
+    object-fit: contain;
+    max-height: 250px;
+    width: 100%;
 
     @media screen and (min-width: $tablet) {
       grid-column: 8 / -2;
