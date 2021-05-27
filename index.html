@@ -11,6 +11,13 @@
   <!-- <link rel="mask-icon" href="/favicon.svg" color="#FFF"> -->
 	<link rel='stylesheet' href='/global.css'>
 	<link rel='stylesheet' href='/build/bundle.css'>
+	<script type="text/javascript">
+      (function() {
+      	var redirect = sessionStorage.redirect
+      	delete sessionStorage.redirect
+	      if (redirect && redirect != location.href) history.replaceState(null, null, redirect)
+      })()
+	</script>
 	<script defer src='/build/bundle.js'></script>
 
   <link href="https://fonts.googleapis.com/css?family=Cabin:400,700&display=swap" rel="stylesheet">
