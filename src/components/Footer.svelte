@@ -97,8 +97,8 @@ C3d333sCzULrfvlzflJrBovspINrajpdF4UpnTYCxz5Vjsxw3+fxxzrhMudj30Ns
   <div class="contact">
     <span>email</span> 
     <a href="./" on:click={load}>click to reveal</a>
-    <span>pgp</span>
-    <a href="https://keybase.io/nicksahler">66D8 3E03 39D3 A010</a>
+    <!-- <span>pgp</span> -->
+    <!--<a href="https://keybase.io/nicksahler">66D8 3E03 39D3 A010</a>-->
   </div>
   <div class="end">
     <div class="overflow"><span>This frog marks the end of the page.</span></div>

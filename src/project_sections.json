@@ -12,6 +12,15 @@
     }]
   },
   {
+    "title": "Machine Learning",
+    "projects": [{
+      "url": "https://squarespace.com",
+      "title": "Machine Learning Engineer @ Squarespace",
+      "info": "Designed ML models and built tooling, docker containers and frontend integrations for their deployment.",
+      "date": "Sep&nbsp;2018 – Jun&nbsp;2021"
+    }]
+  },
+  {
     "title": "Web Development",
     "projects": [{
         "url": "https://bathsmusic.net/",
